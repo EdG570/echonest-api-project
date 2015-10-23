@@ -1,0 +1,34 @@
+.container {
+  width: 1140px;
+  margin: 0 auto;
+}
+
+#artist-name {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
+#image-funfacts img {
+  border-radius: 5px;
+  width: 20em;
+  height: 20em;
+  float: left;
+  margin-right: 2em;
+}
+
+#image-funfacts > h3,
+#image-funfacts > p {
+  display: inline;
+}
+
+#image-funfacts > p {
+  margin-left: 0.5em;
+}
+
+#image-funfacts {
+  width: 40em;
+  margin: 0 auto;
+}
