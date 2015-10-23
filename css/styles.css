@@ -7,6 +7,11 @@ body {
   margin: 0 auto;
 }
 
+p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
 /*-----------HEADER SECTION---------------*/
 
 #header-section {
@@ -61,10 +66,14 @@ input:focus {
 
 #results h1 {
   text-align: center;
+  font-size: 3em;
+  font-weight: 300;
+  margin-top: 1em;
+  letter-spacing: 2px;
 }
 
 ul {
-  
+  list-style: none;
 }
 
 #image-funfacts img {
@@ -86,4 +95,25 @@ ul {
 
 .list {
   margin-top: 5em;
+}
+
+#main-content > p,
+#main-content > h3 {
+  width: 35em;
+  margin: 0 auto;
+  
+}
+
+#main-content > a {
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  letter-spacing: 2px;
+  text-decoration: none;
+  color: #333;
+}
+
+#main-content > p {
+  line-height: 1.4;
+  letter-spacing: 1px;
 }

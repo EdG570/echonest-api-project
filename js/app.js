@@ -3,8 +3,10 @@ $(document).ready(function(){
       event.preventDefault();
       
       $('#image-funfacts').children().remove();
-      $('#artist-name').children().remove();
+      $('#results').find('h1').remove();
       var band = $('#search').val();
+
+
 
 
       //URL build
@@ -27,32 +29,35 @@ $(document).ready(function(){
         results: 1
        
       };
-      
+
       function displayArtists(response) {
 
         console.log(response);
 
           var funFacts = '<ul>';
+          var artistContent = '<p>';
+
           
         $.each(response.response.artists, function(i, item){
-            $('#results').children('.container').prepend('<h2>' + item.name + '</h2>');
-            $('#image-funfacts').append('<img src="' + item.images[0].url + '"/>');
-            funFacts += '<li><p><span>Hometown:</span>' + item.artist_location.location + '</p></li>';
-            funFacts += '<li class="list"><p><span>World Familiarity:</span>' + (Math.floor(item.familiarity * 100)) + '%</p></li>';
-            funFacts += '<li><p>' + Math.floor(item.hotttnesss * 100) + '%</p></li>';
-            musicianHTML += '<li><p>' + item.biographies[0].text + '</p></li>';
-            musicianHTML += '<li><p>' + item.news[0].name + '</p></li>';
-            musicianHTML += '<li><p>' + item.news[0].summary + '</p></li>';
-            musicianHTML += '<li><a href="' + item.news[0].url + '">' + item.news[0].name + '</a></li>';
-            musicianHTML += '<li><video src="' + item.video[0].url + '"></video></li>';
+            $('#results').children('.container').prepend('<h1>' + item.name + '</h1>');
+            $('#results').children('.container').find('#image-funfacts').append('<img src="' + item.images[0].url + '"/>');
+            funFacts += '<li><h3>Hometown:</h3><p>' + item.artist_location.location + '</p></li>';
+            funFacts += '<li class="list"><h3>World Familiarity:</h3><p>' + (Math.floor(item.familiarity * 100)) + '%</p></li>';
+            funFacts += '<li><h3>Popularity</h3><p>' + Math.floor(item.hotttnesss * 100) + '%</p></li>';
+            artistContent += item.biographies[0].text + '</p>';
+            artistContent += '<a href="' + item.news[0].url + '"><h3>' + item.news[0].name + '</h3></a>';
+            artistContent += '<p>' + item.news[0].summary + '</p>';
+            artistContent += '<video src="' + item.video[0].url + '"></video>';
         });
         
-         funFacts += '</ul>';
-         $('#image-funfacts').html(funFacts);
+          funFacts += '</ul>';
+          $('#image-funfacts').html(funFacts);
         
-        $('#results').html(musicianHTML); 
+          $('#main-content').html(artistContent); 
       };
 
       $.getJSON(searchURL, bandsOptions, displayArtists);
 
     });
+
+});
