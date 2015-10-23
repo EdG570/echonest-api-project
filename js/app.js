@@ -39,21 +39,21 @@ $(document).ready(function(){
 
           
         $.each(response.response.artists, function(i, item){
-            $('#results').children('.container').prepend('<h1>' + item.name + '</h1>');
-            $('#results').children('.container').find('#image-funfacts').append('<img src="' + item.images[0].url + '"/>');
+            $('#results').prepend('<h1>' + item.name + '</h1>');
+            $('#image-funfacts').append('<img src="' + item.images[0].url + '"/>');
             funFacts += '<li><h3>Hometown:</h3><p>' + item.artist_location.location + '</p></li>';
             funFacts += '<li class="list"><h3>World Familiarity:</h3><p>' + (Math.floor(item.familiarity * 100)) + '%</p></li>';
             funFacts += '<li><h3>Popularity</h3><p>' + Math.floor(item.hotttnesss * 100) + '%</p></li>';
             artistContent += item.biographies[0].text + '</p>';
             artistContent += '<a href="' + item.news[0].url + '"><h3>' + item.news[0].name + '</h3></a>';
             artistContent += '<p>' + item.news[0].summary + '</p>';
-            artistContent += '<video src="' + item.video[0].url + '"></video>';
+            //artistContent += '<video src="' + item.video[0].url + '"></video>';
         });
         
           funFacts += '</ul>';
-          $('#image-funfacts').html(funFacts);
+          $('#image-funfacts').append(funFacts);
         
-          $('#main-content').html(artistContent); 
+          $('#main-content').append(artistContent); 
       };
 
       $.getJSON(searchURL, bandsOptions, displayArtists);

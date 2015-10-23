@@ -70,6 +70,12 @@ input:focus {
   font-weight: 300;
   margin-top: 1em;
   letter-spacing: 2px;
+  
+}
+
+#results {
+  border-radius: 5px;
+  background-color: blue;
 }
 
 ul {
@@ -97,7 +103,7 @@ ul {
   margin-top: 5em;
 }
 
-#main-content > p,
+
 #main-content > h3 {
   width: 35em;
   margin: 0 auto;
@@ -116,4 +122,7 @@ ul {
 #main-content > p {
   line-height: 1.4;
   letter-spacing: 1px;
+  width: 35em;
+  margin: 0 auto;
+  float-left: clear;
 }
