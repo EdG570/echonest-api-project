@@ -1,14 +1,70 @@
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
 .container {
   width: 1140px;
   margin: 0 auto;
 }
 
-#artist-name {
+/*-----------HEADER SECTION---------------*/
+
+#header-section {
+  background: url('images/header-background.jpeg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: none;
+  padding-bottom: 18em;
+}
+
+.header-content {
+  margin-top: 2em;
+}
+
+.header-content > h2 {
+  color: #333;
+  width: 15em;
+  margin: 0 auto;
+  font-weight: 300;
+  line-height: 1.4;
+  margin-bottom: 0.5em;
+  font-size: 2em;
+}
+
+#logo {
+  width: 10em;
+  position: relative;
+  bottom: 3em;
+}
+
+form {
+  text-align: center;
+  
+}
+
+input {
+  border-radius: 5px;
+  padding: 0.5em 1em;
+  border: none;
+}
+
+input[type="submit"] {
+  background-color: lightblue;
+  margin-left: 1em;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+input:focus {
+  outline: 0;
+}
+
+#results h1 {
   text-align: center;
 }
 
 ul {
-  list-style: none;
+  
 }
 
 #image-funfacts img {
@@ -19,11 +75,6 @@ ul {
   margin-right: 2em;
 }
 
-#image-funfacts > h3,
-#image-funfacts > p {
-  display: inline;
-}
-
 #image-funfacts > p {
   margin-left: 0.5em;
 }
@@ -31,4 +82,8 @@ ul {
 #image-funfacts {
   width: 40em;
   margin: 0 auto;
+}
+
+.list {
+  margin-top: 5em;
 }

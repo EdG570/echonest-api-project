@@ -31,13 +31,15 @@ $(document).ready(function(){
       function displayArtists(response) {
 
         console.log(response);
+
+          var funFacts = '<ul>';
           
         $.each(response.response.artists, function(i, item){
-            $('#artist-name').append('<h2>' + item.name + '</h2>');
+            $('#results').children('.container').prepend('<h2>' + item.name + '</h2>');
             $('#image-funfacts').append('<img src="' + item.images[0].url + '"/>');
-            $('#image-funfacts').append('<h3>Hometown:</h3><p>' + item.artist_location.location + '</p>');
-            $('#image-funfacts').append('<h3>World Familiarity:</h3><p>' + Math.floor(item.familiarity * 100)) + '</p>';
-            musicianHTML += '<li><p>' + Math.floor(item.hotttnesss * 100) + '%</p></li>';
+            funFacts += '<li><p><span>Hometown:</span>' + item.artist_location.location + '</p></li>';
+            funFacts += '<li class="list"><p><span>World Familiarity:</span>' + (Math.floor(item.familiarity * 100)) + '%</p></li>';
+            funFacts += '<li><p>' + Math.floor(item.hotttnesss * 100) + '%</p></li>';
             musicianHTML += '<li><p>' + item.biographies[0].text + '</p></li>';
             musicianHTML += '<li><p>' + item.news[0].name + '</p></li>';
             musicianHTML += '<li><p>' + item.news[0].summary + '</p></li>';
@@ -45,8 +47,12 @@ $(document).ready(function(){
             musicianHTML += '<li><video src="' + item.video[0].url + '"></video></li>';
         });
         
+         funFacts += '</ul>';
+         $('#image-funfacts').html(funFacts);
         
         $('#results').html(musicianHTML); 
-      }
+      };
+
       $.getJSON(searchURL, bandsOptions, displayArtists);
+
     });
