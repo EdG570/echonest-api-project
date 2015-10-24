@@ -10,20 +10,22 @@ body {
 p {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
+  line-height: 1.4;
 }
+
+button:focus {
+  outline: 0;
+}
+
 
 /*-----------HEADER SECTION---------------*/
 
 #header-section {
   background: url('images/header-background.jpeg');
-  background-position: center;
+  background-position: bottom;
   background-size: cover;
   background-repeat: none;
-  padding-bottom: 18em;
-}
-
-.header-content {
-  margin-top: 2em;
+  padding-bottom: 23em;
 }
 
 .header-content > h2 {
@@ -69,17 +71,28 @@ input:focus {
   font-size: 3em;
   font-weight: 300;
   margin-top: 1em;
-  letter-spacing: 2px;
-  
+  letter-spacing: 2px; 
 }
 
-#results {
-  border-radius: 5px;
-  background-color: blue;
-}
+
+
+/*--------------FUN FACTS SECTION------------*/
 
 ul {
   list-style: none;
+}
+
+ul > li:first-child {
+  margin-top: 1em;
+}
+
+ul > li > h3,
+ul > li > p {
+  display: inline-block;
+}
+
+ul > li > p {
+  margin-left: 0.5em;
 }
 
 #image-funfacts img {
@@ -88,6 +101,7 @@ ul {
   height: 20em;
   float: left;
   margin-right: 2em;
+  border: 3px solid #fff;
 }
 
 #image-funfacts > p {
@@ -95,34 +109,88 @@ ul {
 }
 
 #image-funfacts {
-  width: 40em;
+  max-width: 38em;
   margin: 0 auto;
+  margin-bottom: 1em;
+  border-radius: 5px;
+  background: lightgray;
+}
+
+/*---Adds padding to #image-funfacts on append---*/
+.padding {    
+  padding:2em 2em 2em 2em;
 }
 
 .list {
-  margin-top: 5em;
+  margin-top: 1em;
+}
+
+/*---------------ARTIST BUTTONS --------------------*/
+
+#artist-btns {
+  width: 46em;
+  margin: 0 auto;
+  padding-left: 0;
+  margin-top: 2em;
+  letter-spacing: 2px;
+}
+
+#artist-btns > li {
+  display: inline-block;
+  margin-right: 1em;
+}
+
+#artist-btns > li:last-child {
+  margin-right: 0;
+}
+
+#artist-btns > li > button {
+  background-color: lightblue;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  padding: 0.5em 1em;
 }
 
 
-#main-content > h3 {
+/*------------------MAIN CONTENT SECTION----------------*/
+
+#main-content {
+  clear: left;
+  padding: 2em 0;
+}
+
+#main-content > ul {
+  list-style: none;
   width: 35em;
   margin: 0 auto;
-  
+  padding-left: 0;
 }
 
-#main-content > a {
+#main-content > ul > li {
+  background-color: lightgray;
+  border-radius: 5px;
   text-align: center;
-  margin-top: 2em;
+  padding: 0.1em 1em;
   margin-bottom: 1em;
-  letter-spacing: 2px;
+}
+
+#main-content > ul > li > a {
   text-decoration: none;
   color: #333;
 }
 
-#main-content > p {
-  line-height: 1.4;
-  letter-spacing: 1px;
-  width: 35em;
-  margin: 0 auto;
-  float-left: clear;
+#main-content > ul > li > a:hover {
+  color: darkblue;
 }
+
+#main-content > ul > li > h3,
+#main-content > ul > li > a > h3 {
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.onclick {
+  background-color: #F5A623 !important;
+}
+
