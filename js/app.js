@@ -113,6 +113,7 @@ $(document).ready(function(){
 
           requestArtistCategory();
 
+          $('#main-content').children().remove();
           $('.artist-btn').removeClass('onclick');
           $(this).addClass('onclick');
 
@@ -191,11 +192,12 @@ $(document).ready(function(){
 
           //Youtube video API json request
 
-          $('.artist-btn').click(function(event){
+          $('#video').click(function(event){
               event.preventDefault();
               var videos = $(this).text();
-              band += ' band'
+              bandFix = band;                   
               if(videos === 'Videos'){
+                  bandFix += ' band'       //added for more relevant search results
                   getRequest();
                 }
             }); 
@@ -203,11 +205,11 @@ $(document).ready(function(){
 
             function getRequest(){
               var params = {
-                s: band,
+                s: bandFix,
                 r: 'json',
                 part: 'snippet',
                 key: 'AIzaSyC5dmobf66jthC1x1Th6a-8GKlFE0D8r6s',
-                q: band,
+                q: bandFix,
                 type: 'video',
                 maxResults: '6',
                 order: 'rating',
