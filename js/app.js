@@ -43,8 +43,6 @@ $(document).ready(function(){
          $.getJSON(searchURL, bandsOptions, function(data){
             displayArtists(data.response)
          });
-
-
       }
 
       //Callback function for echonest json data
@@ -69,18 +67,6 @@ $(document).ready(function(){
             funFacts += '<li><h3>Popularity:</h3><p>' + Math.floor(item.hotttnesss * 100) + '%</p></li>';
             funFacts += '<li><h3>Active Since:</h3><p>' + item.years_active[p].start + '</p></li>';
             
-            //on button click adds specified content to document
-          /*  $('#artist-btns').on('click', '.artist-btn', function(event){
-                event.preventDefault();
-
-                var category = $(this).text();
-
-                for(i = 0; i < item.biographies.length ; i++) {
-                  $('#main-content').append('<p>' + artistContent += item.biographies[i].text + '</p>';)
-                }
-            }); */
-
-
             //If artist image fails to load go to the next array index until successful load
             $('#artist-image').error(function(){
               $('#artist-image').remove();
@@ -97,9 +83,7 @@ $(document).ready(function(){
           $('#main-content').append(artistContent); 
           
       };
-
-
-
+      
 
       //On button click display selection content in #main-content
       $('.artist-btn').click(function(){
@@ -117,7 +101,6 @@ $(document).ready(function(){
 
           function requestArtistCategory() {
 
-
             //echonest GET request params
             var bandsOptions = { 
             name: band,
@@ -128,8 +111,6 @@ $(document).ready(function(){
             $.getJSON(searchURL, bandsOptions, function(data){
                 displayCategory(data.response)
             });
-
-
           }
 
           function displayCategory(response) {
@@ -143,29 +124,26 @@ $(document).ready(function(){
                       var list = '<ul>';
                       
                       for(i = 0; i < item.biographies.length; i++) {
-                      
-                      list += '<li><a target="_blank" href="' + item.biographies[i].url + '"><h3>' + item.biographies[i].url + '</h3></a></li>';
+                        list += '<li><a target="_blank" href="' + item.biographies[i].url + '"><h3>' + item.biographies[i].url + '</h3></a></li>';
                       }
-                    } 
+                  } 
                    
                    else if(buttonValue === "News") {
                       
                       var list = '<ul>';
 
                       for(i = 0; i < item.news.length; i++) {
-                      
-                      list += '<li><a target="_blank" href="' + item.news[i].url + '"><h3 class="title">' + item.news[i].name + '</h3></a></li>';
+                        list += '<li><a target="_blank" href="' + item.news[i].url + '"><h3 class="title">' + item.news[i].name + '</h3></a></li>';
+                      }
                     }
-                  }
 
                   else if(buttonValue === "Popular Songs") {
                       
                       var list = '<ul>';
 
                       for(i = 0; i < item.news.length; i++) {
-                      
-                      list += '<li><h3>' + item.songs[i].title + '</h3></li>';
-                    }
+                        list += '<li><h3>' + item.songs[i].title + '</h3></li>';
+                      }
                   }
 
                   else if(buttonValue === "Blogs") {
@@ -173,9 +151,8 @@ $(document).ready(function(){
                       var list = '<ul>';
 
                       for(i = 0; i < item.blogs.length; i++) {
-                      
-                      list += '<li><a target="_blank" href="' + item.blogs[i].url + '"><h3 class="blog-header">' + item.blogs[i].name + '</h3><p>' + item.blogs[i].summary + '</p></a></li>';
-                    }
+                        list += '<li><a target="_blank" href="' + item.blogs[i].url + '"><h3 class="blog-header">' + item.blogs[i].name + '</h3><p>' + item.blogs[i].summary + '</p></a></li>';
+                      }
                   }
                   
 
@@ -194,8 +171,8 @@ $(document).ready(function(){
               if(videos === 'Videos'){
                   bandFix += ' band'       //added for more relevant search results
                   getRequest();
-                }
-            }); 
+              }
+          }); 
          
 
             function getRequest(){
@@ -237,13 +214,4 @@ $(document).ready(function(){
 
 
 
-        /*    $('#main-content').append('<h2>Biography</h2>');
-
-
-            //Adds content to be appended to #main-content
-            artistContent += item.biographies[0].text + '</p>';
-            artistContent += '<h2 id="news">News</h2>';
-            artistContent += '<a id="news-link" href="' + item.news[0].url + '"><h3>' + item.news[0].name + '</h3></a>';
-            artistContent += '<p>' + item.news[0].summary + '</p>';
-            artistContent += '<a id="vid" href="' + item.video[p].url + '"><img src="' + item.video[p].image_url + '"></img></a>'; */
         
