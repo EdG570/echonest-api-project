@@ -88,12 +88,7 @@ $(document).ready(function(){
               $('#image-funfacts').prepend('<img id="artist-image" src="' + item.images[p].url + '"/>');;
             });
 
-            //If video fails to load go to the next video in the array
-            $('#vid').error(function(){
-              $('#vid').remove();
-              p++;
-              $('#main-content').append('<a id="vid" href="' + item.video[p].url + '"><img src="' + item.video[p].image_url + '"></img></a>');;
-            });
+  
          });
 
           funFacts += '</ul>';
@@ -149,7 +144,7 @@ $(document).ready(function(){
                       
                       for(i = 0; i < item.biographies.length; i++) {
                       
-                      list += '<li><a href="' + item.biographies[i].url + '"><h3>' + item.biographies[i].url + '</h3></a></li>';
+                      list += '<li><a target="_blank" href="' + item.biographies[i].url + '"><h3>' + item.biographies[i].url + '</h3></a></li>';
                       }
                     } 
                    
@@ -159,7 +154,7 @@ $(document).ready(function(){
 
                       for(i = 0; i < item.news.length; i++) {
                       
-                      list += '<li><a href="' + item.news[i].url + '"><h3 class="title">' + item.news[i].name + '</h3></a></li>';
+                      list += '<li><a target="_blank" href="' + item.news[i].url + '"><h3 class="title">' + item.news[i].name + '</h3></a></li>';
                     }
                   }
 
@@ -179,7 +174,7 @@ $(document).ready(function(){
 
                       for(i = 0; i < item.blogs.length; i++) {
                       
-                      list += '<li><a href="' + item.blogs[i].url + '"><h3>' + item.blogs[i].name + '</h3><p>' + item.blogs[i].summary + '</p></a></li>';
+                      list += '<li><a target="_blank" href="' + item.blogs[i].url + '"><h3>' + item.blogs[i].name + '</h3><p>' + item.blogs[i].summary + '</p></a></li>';
                     }
                   }
                   
@@ -226,12 +221,13 @@ $(document).ready(function(){
 
 
             function showResults(results){
-              var html = '';
+              var html = '<ul id="vids">';
               $.each(results, function(index, value){
-                html += '<li><a href="https://www.youtube.com/watch?v=' + value.snippet.id + '"><img src="' + value.snippet.thumbnails.medium.url + '"/></a><p>' + value.snippet.title + '</p></li>';
+                html += '<li class="vids"><a target="_blank" href="https://www.youtube.com/watch?v=' + value.snippet.id + '"><img src="' + value.snippet.thumbnails.medium.url + '"/></a><p>' + value.snippet.title + '</p></li>';
                 console.log(value);
               });
 
+              html += '</ul>';
               $('#main-content').html(html);
             }
 

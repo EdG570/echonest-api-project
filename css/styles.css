@@ -176,13 +176,18 @@ ul > li > p {
   margin-bottom: 1em;
 }
 
+#main-content > ul > li:hover {
+  background-color: red;
+
+}
+
 #main-content > ul > li > a {
   text-decoration: none;
   color: #333;
 }
 
 #main-content > ul > li > a:hover {
-  color: darkblue;
+  color: #fff;
 }
 
 #main-content > ul > li > h3,
@@ -190,6 +195,27 @@ ul > li > p {
   font-weight: 300;
   line-height: 1.4;
 }
+
+#main-content > ul > .vids {
+  border-radius: 5px;
+  background-color: #fff;
+  display: inline-block;
+  width: 20em;
+}
+
+#main-content > #vids > .vids > p {
+  color: darkblue;
+}
+
+#main-content > #vids {
+  width: 100%;
+}
+
+#main-content > #vids > .vids > a > img {
+  border-radius: 5px;
+}
+
+
 
 .onclick {
   background-color: #F5A623 !important;
