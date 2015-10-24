@@ -23,6 +23,7 @@ $(document).ready(function(){
       $('#main-content').children().remove();
       $('#image-funfacts').addClass('padding'); //Adds padding to fun facts section
       $('.artist-btn').removeClass('onclick');
+      $('#artist-btns').show();
       
       band = $('#search').val(); //stores user search value
 

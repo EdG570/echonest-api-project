@@ -133,6 +133,7 @@ ul > li > p {
   padding-left: 0;
   margin-top: 2em;
   letter-spacing: 2px;
+  display: none;
 }
 
 #artist-btns > li {
