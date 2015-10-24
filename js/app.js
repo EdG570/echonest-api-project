@@ -174,7 +174,7 @@ $(document).ready(function(){
 
                       for(i = 0; i < item.blogs.length; i++) {
                       
-                      list += '<li><a target="_blank" href="' + item.blogs[i].url + '"><h3>' + item.blogs[i].name + '</h3><p>' + item.blogs[i].summary + '</p></a></li>';
+                      list += '<li><a target="_blank" href="' + item.blogs[i].url + '"><h3 class="blog-header">' + item.blogs[i].name + '</h3><p>' + item.blogs[i].summary + '</p></a></li>';
                     }
                   }
                   

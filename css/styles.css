@@ -128,7 +128,7 @@ ul > li > p {
 /*---------------ARTIST BUTTONS --------------------*/
 
 #artist-btns {
-  width: 46em;
+  width: 43em;
   margin: 0 auto;
   padding-left: 0;
   margin-top: 2em;
@@ -213,6 +213,10 @@ ul > li > p {
 
 #main-content > #vids > .vids > a > img {
   border-radius: 5px;
+}
+
+#main-content > ul > li > a > .blog-header {
+  font-weight: 500;
 }
 
 
