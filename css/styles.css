@@ -229,3 +229,26 @@ ul > li > p {
   margin: 0 auto;
 }
 
+
+/*------------------Images ---------------------*/
+
+#main-content > #image-list {
+  width: 71em;
+}
+#main-content > #image-list > li {
+  width: 15em;
+  height: 15em;
+  background-color: #fff;
+  padding: 0;
+  display: inline-block;
+  margin-right: 1em;
+  margin-left: 1em;
+}
+
+#main-content > #image-list > li > a > img {
+  width: 15em;
+  height: 15em;
+  display: inline-block;
+  border-radius: 5px;
+}
+

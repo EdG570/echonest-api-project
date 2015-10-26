@@ -154,6 +154,15 @@ $(document).ready(function(){
                         list += '<li><a target="_blank" href="' + item.blogs[i].url + '"><h3 class="blog-header">' + item.blogs[i].name + '</h3><p>' + item.blogs[i].summary + '</p></a></li>';
                       }
                   }
+
+                  else if(buttonValue === "Images") {
+                      
+                      var list = '<ul id="image-list">';
+
+                      for(i = 0; i < item.blogs.length; i++) {
+                        list += '<li class="images"><a target ="_blank" href="' + item.images[i].url + '"><img src="' + item.images[i].url + '"/></a></li>';
+                      }
+                  }
                   
 
                    list += '</ul>'
