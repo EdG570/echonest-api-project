@@ -178,7 +178,7 @@ $(document).ready(function(){
               var videos = $(this).text();
               bandFix = band;                   
               if(videos === 'Videos'){
-                  bandFix += ' band'       //added for more relevant search results
+                  bandFix += ' music video band'       //added for more relevant search results
                   getRequest();
               }
           }); 
