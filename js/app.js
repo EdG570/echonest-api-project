@@ -162,7 +162,7 @@ $(document).ready(function(){
           }
 
 
-          //Youtube video API json request
+/*------------Youtube video API json request -------------------------------------*/
 
           $('#video').click(function(event){
               event.preventDefault();
@@ -185,26 +185,28 @@ $(document).ready(function(){
                 type: 'video',
                 maxResults: '6',
                 order: 'rating',
-                id: 'videoId'
+                id: 'videoId',
+                autoplay: 0
 
               };
                 url = "https://www.googleapis.com/youtube/v3/search";
               
 
               $.getJSON(url, params, function(data){
+                  console.log(data.items);
                   showResults(data.items);
               });
             }
 
 
             function showResults(results){
-              var html = '<ul id="vids">';
+              var html = '<div id="video-player">';
               $.each(results, function(index, value){
-                html += '<li class="vids"><a target="_blank" href="https://www.youtube.com/watch?v=' + value.snippet.id + '"><img src="' + value.snippet.thumbnails.medium.url + '"/></a><p>' + value.snippet.title + '</p></li>';
+                html += '<iframe class="video-player" width="640" height="390" style="margin-top: 1em; margin-bottom: 2em; border-radius: 5px" src="http://www.youtube.com/embed/' + value.id.videoId + '"/>';
                 console.log(value);
               });
 
-              html += '</ul>';
+              html += '</div>'
               $('#main-content').html(html);
             }
 

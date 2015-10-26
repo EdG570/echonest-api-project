@@ -219,9 +219,13 @@ ul > li > p {
   font-weight: 500;
 }
 
-
-
 .onclick {
   background-color: #F5A623 !important;
+}
+
+#main-content > #video-player {
+  width: 40em;
+  margin: 0 auto;
+  margin: 0 auto;
 }
 
