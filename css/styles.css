@@ -25,11 +25,12 @@ button:focus {
   background-position: bottom;
   background-size: cover;
   background-repeat: none;
-  padding-bottom: 23em;
+  padding-bottom: 20em;
+  padding-top: 1em;
 }
 
 .header-content > h2 {
-  color: #333;
+  color: #777;
   width: 15em;
   margin: 0 auto;
   font-weight: 300;
@@ -39,9 +40,8 @@ button:focus {
 }
 
 #logo {
-  width: 10em;
-  position: relative;
-  bottom: 3em;
+  width: 9em;
+  margin-bottom: 10em;
 }
 
 form {
@@ -118,7 +118,7 @@ ul > li > p {
 
 /*---Adds padding to #image-funfacts on append---*/
 .padding {    
-  padding:2em 2em 2em 2em;
+  padding: 2em;
 }
 
 .list {
@@ -251,4 +251,138 @@ ul > li > p {
   display: inline-block;
   border-radius: 5px;
 }
+
+/*----------------MEDIA QUERIES------------------*/
+
+@media only screen and (max-width: 1140px) {
+  .container {
+    width: 100%;
+  }
+
+  #header-section {
+    padding-left: 1em;
+    padding-right: 1em;
+    width: 100%;
+  }
+
+  #main-content > #image-list {
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  #main-content > #image-list > li {
+    width: 15em;
+  }
+
+  #main-content > #image-list > li > a > img {
+    width: 15em;
+    height: 15em;
+    display: inline-block;
+    border-radius: 5px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #artist-btns {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  #artist-btns {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .artist-btn {
+    margin-top: 1em;
+  }
+}
+
+@media only screen and (max-width: 688px) {
+  #main-content > .video-player {
+    width: 10em;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  #main-content > ul {
+    width: 95%;
+  }
+
+  #main-content > ul > li > h3,
+  #main-content > ul > li > a > h3 {
+    font-size: 1em;
+}
+
+@media only screen and (max-width: 550px) {
+  #logo-container {
+    width: 9em;
+    margin: 0 auto;
+  }
+
+  .header-content {
+    width: 90%;
+  }
+
+  .header-content > h2 {
+    font-size: 1.5em;
+    width: 13em;
+    margin-bottom: 0.75em;
+  }
+
+  #results {
+    padding: 1em;
+  }
+
+  #image-funfacts img {
+    border-radius: 5px;
+    width: 100%;
+    height: 20em;
+    margin: 0 auto;
+    margin-right: 0em;
+    float: none;
+  }
+
+  #image-funfacts {
+    max-width: 70%;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    background: lightgray;
+  }
+
+  .list {
+    margin-top: 0em;
+  }
+
+  .padding {
+    padding-bottom: 1em;
+  }
+
+  #artist-btns {
+    width: 80%;
+  }
+
+}
+
+@media only screen and (max-width: 470px) {
+  #artist-btns {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .padding {
+    padding: 2em;
+  }
+
+  #artist-btns > li {
+    margin-right: 0.25em;
+  }
+}
+
+
 
