@@ -21,7 +21,7 @@ button:focus {
 /*-----------HEADER SECTION---------------*/
 
 #header-section {
-  background: url('images/header-background.jpeg');
+  background: url('images/header-background.jpg');
   background-position: bottom;
   background-size: cover;
   background-repeat: none;
@@ -281,6 +281,24 @@ ul > li > p {
     height: 15em;
     display: inline-block;
     border-radius: 5px;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  #header-section {
+    background: url('images/header-background-med.jpg');
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: none;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  #header-section {
+    background: url('images/header-background-small.jpg');
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: none;
   }
 }
 
