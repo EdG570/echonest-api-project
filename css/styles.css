@@ -319,8 +319,12 @@ ul > li > p {
 
 @media only screen and (max-width: 550px) {
   #logo-container {
-    width: 9em;
+    width: 8em;
     margin: 0 auto;
+  }
+
+  #header-section {
+    padding-left: 0em;
   }
 
   .header-content {
